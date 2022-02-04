@@ -69,13 +69,66 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+Movie.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
 
+
+batman_begins = Movie.where({ name: "Batman Begins" })[0]
+the_dark_knight = Movie.where({ name: "The Dark Knight" })[0]
+the_dark_knight_rises = Movie.where({ name: "The Dark Knight" })[0]
+
+
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+values = {
+    name: "Christian Bale",
+    character_name: "Bruce Wayne",
+}
+
+christian_bale = People.new(values)
+christian_bale.save
+
+
+values = {
+    title: "Batman Begins",
+    year_released: "2005",
+    rated: "PG-13",
+    director: "Christopher Nolan",
+    movie_id: batman_begin.id
+}
+
+batman_begins = Movie.new(values)
+batman_begins.save
+
+values = {
+    title: "The Dark Knight",
+    year_released: "2008",
+    rated: "PG-13",
+    director: "Christopher Nolan",
+    movie_id: the_dark_knight.id
+}
+
+the_dark_knight = Movie.new(values)
+the_dark_knight.save
+
+
+values = {
+    title: "The Dark Knight Rises",
+    year_released: "2012",
+    rated: "PG-13",
+    director: "Christopher Nolan",
+    movie_id: the_dark_knight_rises.id
+}
+
+the_dark_knight_rises = Movie.new(values)
+the_dark_knight_rises.save
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
