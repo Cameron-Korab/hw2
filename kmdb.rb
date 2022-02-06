@@ -68,67 +68,321 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
 Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
-# TODO!
+
+# Main Director..............................................................................
+newPersonValues = { 
+    name: "Christopher Nolan"
+}
+movieDirectorRecord = Person.new(newPersonValues)
+movieDirectorRecord.save
+
+# Batman Begins..............................................................................
+
+newMovieValues = { 
+    title: "Batman Begins",
+    year_released: 2005,
+    rated: "PG-13",
+    director_id: movieDirectorRecord.id
+}
+
+movieRecord = Movie.new(newMovieValues)
+movieRecord.save
+
+# The Dark Knight...........................................................................
+
+newMovieValues = { 
+    title: "The Dark Knight",
+    year_released: 2008,
+    rated: "PG-13",
+    director_id: movieDirectorRecord.id
+}
+
+movieRecord = Movie.new(newMovieValues)
+movieRecord.save
 
 
-batman_begins = Movie.where({ name: "Batman Begins" })[0]
-the_dark_knight = Movie.where({ name: "The Dark Knight" })[0]
-the_dark_knight_rises = Movie.where({ name: "The Dark Knight" })[0]
+# The Dark Knight Rises......................................................................
 
+newMovieValues = { 
+    title: "The Dark Knight Rises",
+    year_released: 2012,
+    rated: "PG-13",
+    director_id: movieDirectorRecord.id
+}
+
+movieRecord = Movie.new(newMovieValues)
+movieRecord.save
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-# TODO!
 
-values = {
-    name: "Christian Bale",
-    character_name: "Bruce Wayne",
+# # Main Director..............................................................................
+# newPersonValues = { 
+#     name: "Christopher Nolan"
+# }
+# movieDirectorRecord = Person.new(newPersonValues)
+# movieDirectorRecord.save
+
+# # Batman Begins..............................................................................
+
+# newMovieValues = { 
+#     title: "Batman Begins",
+#     year_released: 2005,
+#     rated: "PG-13",
+#     director_id: movieDirectorRecord.id
+# }
+
+# movieRecord = Movie.new(newMovieValues)
+# movieRecord.save
+
+# PERSON AND ROLE ...............................................................................
+
+newPersonValues = { 
+    name: "Christian Bale"
 }
+personRecord = Person.new(newPersonValues)
+personRecord.save
 
-christian_bale = People.new(values)
-christian_bale.save
-
-
-values = {
-    title: "Batman Begins",
-    year_released: "2005",
-    rated: "PG-13",
-    director: "Christopher Nolan",
-    movie_id: batman_begin.id
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Bruce Wayne"
 }
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
 
-batman_begins = Movie.new(values)
-batman_begins.save
-
-values = {
-    title: "The Dark Knight",
-    year_released: "2008",
-    rated: "PG-13",
-    director: "Christopher Nolan",
-    movie_id: the_dark_knight.id
+newPersonValues = { 
+    name: "Michael Caine"
 }
+personRecord = Person.new(newPersonValues)
+personRecord.save
 
-the_dark_knight = Movie.new(values)
-the_dark_knight.save
-
-
-values = {
-    title: "The Dark Knight Rises",
-    year_released: "2012",
-    rated: "PG-13",
-    director: "Christopher Nolan",
-    movie_id: the_dark_knight_rises.id
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Alfred"
 }
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
 
-the_dark_knight_rises = Movie.new(values)
-the_dark_knight_rises.save
+newPersonValues = { 
+    name: "Liam Neeson"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
 
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Ra's Al Ghul"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
 
+newPersonValues = { 
+    name: "Katie Holmes"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
 
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Rachel Dawes"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Gary Oldman"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Commissioner Gordon"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+# # The Dark Knight................................................
+
+# newMovieValues = { 
+#     title: "The Dark Knight",
+#     year_released: 2008,
+#     rated: "PG-13",
+#     director_id: movieDirectorRecord.id
+# }
+
+# movieRecord = Movie.new(newMovieValues)
+# movieRecord.save
+
+# PERSON AND ROLE ...............................................................................
+
+newPersonValues = { 
+    name: "Christian Bale"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Bruce Wayne"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Heath Ledger"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Joker"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Aaron Eckhart"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Harvey Dent"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Michael Caine"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Alfred"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Maggie Gyllenhaal"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Rachel Dawes"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+# # The Dark Knight Rises...........................................................
+
+# newMovieValues = { 
+#     title: "The Dark Knight Rises",
+#     year_released: 2012,
+#     rated: "PG-13",
+#     director_id: movieDirectorRecord.id
+# }
+
+# movieRecord = Movie.new(newMovieValues)
+# movieRecord.save
+
+# PERSON AND ROLE ...............................................................................
+
+newPersonValues = { 
+    name: "Christian Bale"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Bruce Wayne"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Gary Oldman"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Commissioner Gordon"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Tom Hardy"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Bane"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Joseph Gordon-Levitt"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "John Blake"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+newPersonValues = { 
+    name: "Anne Hathaway"
+}
+personRecord = Person.new(newPersonValues)
+personRecord.save
+
+newRoleValues = {
+    movie_id: movieRecord.id,
+    actor_id: personRecord.id,
+    character_name: "Selina Kyle"
+}
+roleRecord = Role.new(newRoleValues)
+roleRecord.save
+
+# make tables for movies and top cast
+# fil in info with values
+# loop to pull values 
 
 # Prints a header for the movies output
 puts "Movies"
@@ -136,7 +390,13 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output
-# TODO!
+
+movies = Movie.all
+
+for movie in movies
+    director_name = Person.where({id: movie.director_id})[0]
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{director_name.name}"
+end
 
 # Prints a header for the cast output
 puts ""
@@ -145,4 +405,19 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
-# TODO!
+roles = Role.all
+
+for role in roles
+    movie = Movie.where({id: role.movie_id})[0]
+    actor = Person.where({id: role.actor_id})[0]
+    # director_name = Person.where({id: movie.director_id})[0]
+    puts "#{movie.title} #{actor.name} #{role.character_name}"
+end
+
+# Top Cast
+# ========
+
+# Batman Begins          Christian Bale        Bruce Wayne
+# Batman Begins          Michael Caine         Alfred
+# Batman Begins          Liam Neeson           Ra's Al Ghul
+# Batman Begins          Katie Holmes          Rachel Dawes
