@@ -68,13 +68,16 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
+
+
 Movie.destroy_all
 Person.destroy_all
 Role.destroy_all
 
+
 # Generate models and tables, according to the domain model
 
-# Main Director..............................................................................
+# (only) Director..............................................................................
 newPersonValues = { 
     name: "Christopher Nolan"
 }
@@ -121,7 +124,7 @@ movieRecord.save
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 
-# # Main Director..............................................................................
+# # Only Director..............................................................................
 # newPersonValues = { 
 #     name: "Christopher Nolan"
 # }
@@ -405,6 +408,7 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
+
 roles = Role.all
 
 for role in roles
